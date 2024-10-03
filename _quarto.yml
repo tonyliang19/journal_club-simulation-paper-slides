@@ -1,0 +1,30 @@
+title: Using simulation studies to evaluate statistical methods
+author: Tony Liang
+institute: University of British Columbia
+date: 2024-10-3
+date-format: long
+bibliography: references.bib
+engine: knitr
+format:
+  revealjs:
+    #logo: materials/img/logo.png
+    slide-number: true
+    hash-one-based-index: true 
+    history: false
+    footnotes-hover:  true
+    #chalkboard: true
+    embed-resources: true
+    width: 1280
+    height: 720
+    mouse-wheel: false
+    scrollable: false
+    code-overflow: wrap
+    hash-type: number
+    link-external-icon: true
+    link-external-newwindow: true
+    lang: en-CA
+    #theme:
+    #  - assets/custom_styles.scss
+    output-file: index.html # naming other stuff, gh complains
+    transition: fade
+    transition-speed: default # or fast or slow
