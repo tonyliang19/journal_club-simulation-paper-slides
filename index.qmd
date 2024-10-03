@@ -20,7 +20,7 @@
 
 ## What is simulation study?
 
-- Computer experiments that involve creating data using `pseudo-random` sampling.
+- Computer experiments that involve creating data using `pseudo-random` sampling^[@morris2019using]. 
 
   - Example: Take 3 numbers sampled from $N(\mu, \sigma)$ for some $\mu$ and $\sigma$ parameter under some seed in `R`.
   - This way ensure that next time we get same 3 numbers back by using same set of parameters.
@@ -185,6 +185,8 @@ print(result)
 - When comparing various methods, simulate data in one package and export them
   -   Every method are based on same simulated data now
   - Otherwise data might not be generated identically for every method.
+
+## References
   
 ## {background-image=assets/img/website_no_bkg.png background-size=contain background-position=top}
 
