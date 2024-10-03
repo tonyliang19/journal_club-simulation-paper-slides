@@ -1,3 +1,172 @@
-## This should be first slide after title slide
+## What is simulation study?
 
-- a bullet
+- Computer experiments that involve creating data using `pseudo-random` sampling.
+
+  - Example: Take 3 numbers sampled from $N(\mu, \sigma)$ for some $\mu$ and $\sigma$ parameter under some seed in `R`.
+  - This way ensure that next time we get same 3 numbers back by using same set of parameters.
+
+:::: {.columns .fragment}
+
+::: {.column width="50%"}
+
+With set seed (pseudo-random)
+
+```{r}
+#| echo: true
+#| 
+set.seed(1)
+mu <- sigma <- 2
+rnorm(3, mean=mu, sd=sigma)
+```
+
+:::
+
+::: {.column width="50%"}
+
+Without setting a seed 
+
+```{r}
+#| echo: true
+# No seed on purpose
+mu <- sigma <- 2
+rnorm(3, mean=mu, sd=sigma)
+```
+
+:::
+
+::::
+
+## Why using simulation studies?
+
+- Following earlier example, we know some fixed results (like ground truth).
+
+- Then, it is possible to use it for accessing performances since "truth" is available.
+
+  ::: {.callout-note}
+  # Furthermore
+  - Truth can be easily changed by modifying `parameter/s of interest`.
+  - From previous example, we could change $\mu$ or $\sigma$, often case you might want to try `many parameters` for various options.
+  :::
+  
+  
+
+## Current usage of simulation studies in research
+
+- Widely used in statistical research
+  - `Evaluation` of new methods and `comparison` of alternative methods
+  - ~~Our lab?~~
+
+::: {.fragment}
+
+What's the norm now?
+
+:::
+
+::: {.fragment}
+
+- Lack neccessary understanding to execute simulation with confidence
+- Overconfident leading to weak experiment design, and report results poorly
+
+:::
+
+
+
+
+## Author's work and findings
+
+- Reviewed 100 articles taken from Volume 34 of Statistics in Medicine (2015), that included at least 1 simulation study.
+
+- No summary plot given, subtle derivation of classifying those reviewed papers using their procedure **ADEMP**:
+  - Aims
+  - Data-generating mechanisms
+  - Methods
+  - Estimands
+  - Performance measure
+
+## Aims
+
+- Design study to show method is viable in some settings
+- Design study to stretch of break method, i.e. identifying settings where mtehod may fail
+
+Often, want to compare methods where some or all have shown to work, ignoring fact that methods were designed to address **slightly different** problems.
+
+## Data-generating mechanisms
+
+Usually spend more time here than other steps in ADEMP
+
+::: {.callout-note}
+# Choice of data-generating process
+- Parametric draws from known model
+  - Explore many different data-generating distribution
+  - Could be completely unrealistic
+
+- Repeated resampling replacement from specific dataset
+  - Dont know true data generating model
+  - Typically explores only one mechanism
+
+:::
+
+## Data-generating mechanisms
+
+Also, could depend on aims to investigate mehod under:
+
+- realistic mechanism
+- completely unrealistic for sake of testing robustness
+
+::: {.callout-tip}
+
+# What people usually do
+
+Varying sample size $n$ of simulated data is typically used, because performance varies over $n$.
+
+:::
+
+::: {.fragment}
+
+From Author's review only 3/100 used resampling methods, rest used some form of parametric model.
+
+:::
+
+
+## Methods
+
+- More generic term, often refer as model for analysis
+ - Could be design or procedure
+ - Usually to describe what "models" are being evaluated and how compared
+
+When comparing several methods in order to identify the best:
+
+1. Code implementation of method
+2. Estimand of method thats targeting (unadjusted vs adjusted)
+3. Nonconvergence or perfect prediction
+
+
+## Performance measures
+
+- Numerical quantity to access performance of a method
+- These are subjected to error, since they are estimated as well from simulation studies
+- So prefer to have large number of repetitions
+- Largely depends on aim and what study targets, a population parameter value or a null hypothesis
+
+## Coding and Impleting up studies
+
+- This stage could introduce more errors on simply one line of code
+
+```{r}
+#| echo: true
+a <- b <- c <- 2
+result <- c(a-b*c, (a-b)*c, a-(b*c) )
+print(result)
+```
+
+- Good rule is create one giant run of simulation with large $n$
+  - Once satisfied, generalise this to different seeds of large run of $n$
+  
+- When comparing various methods, simulate data in one package and export them
+  -   Every method are based on same simulated data now
+  - Otherwise data might not be generated identically for every method.
+  
+## {background-image=assets/img/website_no_bkg.png background-size=contain background-position=top}
+
+
+[Thanks!]{.thanks}

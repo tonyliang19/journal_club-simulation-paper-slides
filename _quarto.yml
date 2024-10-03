@@ -23,8 +23,9 @@ format:
     link-external-icon: true
     link-external-newwindow: true
     lang: en-CA
-    #theme:
-    #  - assets/custom_styles.scss
+    theme: 
+      - solarized
+      - assets/styles.scss
     output-file: index.html # naming other stuff, gh complains
     transition: fade
     transition-speed: default # or fast or slow
