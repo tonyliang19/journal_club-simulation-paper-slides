@@ -1,3 +1,23 @@
+## Land acknowledgement {background-image=assets/img/land_ack.jpg background-size=cover background-opacity="0.4"}
+
+**I would like to acknowledge that I work on the traditional, ancestral, and unceded territory of the Coast Salish Peoples, including the territories of the xwməθkwəy̓əm (Musqueam), Skwxwú7mesh (Squamish), Stó:lō and Səl̓ílwətaʔ/Selilwitulh (Tsleil- Waututh) Nations.**
+
+*Traditional*: Traditionally used and/or occupied by Musqueam people
+
+*Ancestral*: Recognizes land that is handed down from generation to generation
+
+*Unceded*: Refers to land that was not turned over to the Crown (government) by a treaty or other agreement
+
+::: {.notes}
+
+* Be short on this slide
+* Traditional, ancestral, unceded territory of Coast Salish people, inckuding territories of :
+  * Musqueam
+  * Squamish
+  * Tsleil-Waututh Nations
+
+:::
+
 ## What is simulation study?
 
 - Computer experiments that involve creating data using `pseudo-random` sampling.
